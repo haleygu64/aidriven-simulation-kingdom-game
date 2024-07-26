@@ -6,6 +6,11 @@ this is an AI driven map baed simulation mini game for demo.
 
 # How to run
 
+- initial the project
+```bash
+bun install
+```
+
 - run the service
 ```bash
 docker-compose up
