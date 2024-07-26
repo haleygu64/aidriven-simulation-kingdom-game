@@ -435,7 +435,7 @@ document.addEventListener('DOMContentLoaded', () => {
     board.style.display = 'grid'; // Ensure the game board is displayed
     startButton.style.display = 'none';
     document.getElementById('event-list').innerHTML = ''; // Clear previous events
-    document.getElementById('epic-board').style.display = 'none';
+    document.getElementById('epic-board').innerHTML = ''; // Clear previous epics
     gameInterval = setInterval(simulateTurn, 1000);
     timer = setTimeout(() => stopGame(), timeLimit); // Use an arrow function to call stopGame
   }
