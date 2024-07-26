@@ -1,0 +1,16 @@
+version: '3'
+services:
+  web:
+    image: nginx:1.24.0-alpine
+    volumes:
+    - ./game:/usr/share/nginx/html:ro
+    ports:
+    - "8080:80"
+  api:
+    image: oven/bun:latest
+    working_dir: /app
+    command: bun index.ts
+    ports:
+    - "3000:3000"
+    volumes:
+    - ./api:/app
