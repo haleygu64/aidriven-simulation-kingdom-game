@@ -291,7 +291,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function testGenerateEpic(kingdom) {
+  function mockGenerateEpic(kingdom) {
     const epicIntros = [
       `In the annals of ${kingdom.name},`,
       `The saga of ${kingdom.name} unfolds,`,
@@ -380,12 +380,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  async function updateEpics() {
+  function updateEpics() {
     const epicBoard = document.getElementById('epic-board');
     epicBoard.innerHTML = '<h2>Kingdom Epics</h2>';
 
     for (const kingdom of kingdoms) {
-      const epic = await generateEpic(kingdom);
+      const epic = mockGenerateEpic(kingdom);
       const epicElement = document.createElement('div');
       epicElement.classList.add('kingdom-epic');
       epicElement.innerHTML = `<h3>${kingdom.name}</h3><p>${epic}</p>`;
@@ -394,12 +394,12 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Stop the game and display the scoreboard
-  async function stopGame() {
+  function stopGame() {
     clearInterval(gameInterval);
     clearTimeout(timer);
     document.getElementById('game-container').style.display = 'none';
     displayScoreboard();
-    await updateEpics();
+    updateEpics();
   }
 
   // Display the scoreboard
@@ -425,9 +425,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // Reset the game
-  async function resetGame() {
-    await stopGame(); // Ensure the previous game is fully stopped
-
+  function resetGame() {
     kingdoms = initializeKingdoms();
     updateBoard();
     scoreboard.style.display = 'none';
@@ -458,8 +456,8 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Reset the game when the reset button is clicked
-  resetButton.addEventListener('click', async () => {
-    await resetGame();
+  resetButton.addEventListener('click', () => {
+    resetGame();
   });
   // Initial setup
   updateBoard(); // Create the initial board
