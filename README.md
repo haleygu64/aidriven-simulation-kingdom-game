@@ -25,3 +25,5 @@ http://localhost:8080/
 # Online demo
 
 [Demo (static version)]('https://haleygu64.github.io/aidriven-simulation-kingdom-game/game/')
+
+https://haleygu64.github.io/aidriven-simulation-kingdom-game/game/
