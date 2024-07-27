@@ -21,3 +21,7 @@ docker-compose up
 http://localhost:8080/
 ```
 - click start game button n' have fun
+
+# Online demo
+
+[Demo (static version)]('https://haleygu64.github.io/aidriven-simulation-kingdom-game/game/')
